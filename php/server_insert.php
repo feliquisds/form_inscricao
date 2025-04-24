@@ -11,7 +11,7 @@
     $tipo_insc = ($tipo_insc == 'Palestrante') ? 'PL' : (($tipo_insc == 'Participante') ? 'PR' : 'VO');
 
     $banco = new PDO('sqlite:../database.db');
-    $sql = "INSERT INTO inscricoes (nome, email, telefone, data_nasc, genero, tipo_insc, mensagem) VALUES (:nome, :email, :telefone, :data_nasc, :genero, :tipo_insc, :mensagem)";
+    $sql = "INSERT INTO Inscrito (nome, email, telefone, data_nasc, genero, tipo_insc, mensagem) VALUES (:nome, :email, :telefone, :data_nasc, :genero, :tipo_insc, :mensagem)";
     $stmt = $banco->prepare($sql);
 
     $stmt->execute([
