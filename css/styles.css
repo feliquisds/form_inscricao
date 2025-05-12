@@ -1,0 +1,76 @@
+:root {
+    --max-width: 300px;
+    --gradient1: #fb21ff;
+    --gradient2: #0267ff;
+    --background: #f3f3f3;
+    --item-background: #fbfbfb;
+    --item-border: #e5e5e5;
+    --item-hover: #f6f6f6;
+    --gray: #868686;
+}
+
+@font-face {
+    font-family: OneUISans;
+    src: url(../fonts/text_oneuisans.ttf);
+}
+
+@font-face {
+    font-family: SamsungSharpSans;
+    src: url(../fonts/title_samsungsharpsans.ttf);
+}
+
+h1 {
+    font-family: SamsungSharpSans;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background);
+    font-family: OneUISans;
+}
+
+form {
+    width: 100vw;
+    max-width: var(--max-width);
+    margin: 10px;
+}
+
+input {
+    width: inherit;
+    max-width: calc(var(--max-width) - 18px);
+    padding: 7px;
+    outline: 0px;
+    border: 2px solid var(--item-border);
+    border-bottom: 2px solid #0000;
+    border-radius: 4px;
+    background: var(--item-background);
+    background-image: linear-gradient(var(--item-background), var(--item-background)), 
+                      linear-gradient(to right, var(--gray), var(--gray));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    color: black;
+}
+
+input[type=radio] {
+    width: auto;
+    min-width: auto;
+}
+
+input:hover {
+    background-image: linear-gradient(var(--item-hover), var(--item-hover)), 
+                      linear-gradient(to right, var(--gray), var(--gray));
+}
+
+input:hover:focus {
+    background-image: linear-gradient(var(--item-background), var(--item-background)), 
+                      linear-gradient(to right, var(--gradient1), var(--gradient2));
+}
+
+input:focus {
+    margin-bottom: -0.66px;
+    border-bottom: 3px solid #00000000;
+    background-image: linear-gradient(var(--item-background), var(--item-background)), 
+                      linear-gradient(to right, var(--gradient1), var(--gradient2));
+  }
