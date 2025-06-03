@@ -19,6 +19,29 @@
     --text-dark-transparent: #0000007f;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --max-width: 300px;
+        --gradient1: #fb21ff;
+        --gradient2: #0267ff;
+        --background: #202020;
+        --item-background: #2b2b2b;
+        --item-border: #1d1d1d;
+        --item-hover: #323232;
+        --dark-gray: #9a9a9a;
+        --light-gray: #3a3a3a;
+        --button-main-background: #4cc2ff;
+        --button-main-border-light: #5ac7ff;
+        --button-main-border-shadow: #42a7dc;
+        --button-main-hover: #48b2e9;
+        --button-main-press: #45a4d5;
+        --text-light: #000;
+        --text-light-transparent: #0000007f;
+        --text-dark: #fff;
+        --text-dark-transparent: #ffffffaf;
+    }
+}
+
 @font-face {
     font-family: OneUISans;
     src: url(../fonts/text_oneuisans.ttf);
@@ -34,6 +57,7 @@ h1 {
 }
 
 body {
+    color: var(--text-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +84,12 @@ input {
                       linear-gradient(to right, var(--dark-gray), var(--dark-gray));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    color: black;
+    color: var(--text-dark);
+}
+
+input[type=radio] {
+    width: auto;
+    min-width: auto;
 }
 
 input:hover {
@@ -84,7 +113,6 @@ fieldset {
     background-color: var(--item-background);
     border: 2px solid var(--item-border);
     border-radius: 4px;
-    padding: 10px;
 }
 
 select {
@@ -95,6 +123,7 @@ select {
     border: 2px solid var(--item-border);
     border-bottom: 2px solid var(--light-gray);
     border-radius: 4px;
+    color: var(--text-dark);
 }
 
 select:hover {
@@ -104,9 +133,6 @@ select:hover {
 textarea {
     width: inherit;
     max-width: calc(var(--max-width) - 18px);
-    min-width: calc(var(--max-width) - 18px);
-    min-height: 75px;
-    max-height: 150px;
     padding: 7px;
     outline: 0px;
     border: 2px solid var(--item-border);
@@ -117,7 +143,7 @@ textarea {
                       linear-gradient(to right, var(--dark-gray), var(--dark-gray));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    color: black;
+    color: var(--text-dark);
 }
 
 textarea:hover {
